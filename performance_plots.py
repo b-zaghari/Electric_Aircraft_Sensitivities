@@ -59,10 +59,12 @@ def main():
             
                 # ---------------------Power Conversion --------------    
                 P_motor             = np.random.normal(loc=Max_Power_Required[ac], scale=100, size= n_sims)  # should this be P_aircraft? 
-                T_torque_density    = np.random.normal(loc=1.5, scale=0.05, size= n_sims) 
+                T_torque_density    = np.random.normal(loc=1.5, scale=0.05, size= n_sims) # This value is very small? I am struggling to find one
+                # motor to provide the power ranges you have mentioned here. I would like to add the parameters for today's technology but at
+                # 2500 rpm and Max_Power_Required = [ 1158000, 2050000  ,13567500] we could just find values with superconducting machines. Around 1MW there are motors but at much higher speed like 15000 rpm. (BZ comment)
                 omega               = np.random.normal(loc=2500, scale=200, size= n_sims) 
-                Pd_motor_cooling    = np.random.normal(loc=50, scale=5, size= n_sims) 
-                eta_motor           = np.random.normal(loc=0.98, scale=0.02, size= n_sims) 
+                Pd_motor_cooling    = np.random.normal(loc=50, scale=5, size= n_sims) # Motor cooling density 
+                eta_motor           = np.random.normal(loc=0.98, scale=0.02, size= n_sims) # Motor efficiency 
                 
             
                 # -----------------------Inverter-----------------------    
